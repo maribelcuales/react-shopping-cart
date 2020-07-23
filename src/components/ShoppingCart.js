@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 // Components
 import Item from './ShoppingCartItem';
+import { CartContext } from '../contexts/CartContext';
 
 const ShoppingCart = props => {
 	const getCartTotal = () => {
@@ -9,6 +10,9 @@ const ShoppingCart = props => {
 			return acc + value.price;
 		}, 0).toFixed(2);
 	};
+
+	const cart = useContext(CartContext); 
+	console.log({ cart });
 
 	return (
 		<div className="shopping-cart">
