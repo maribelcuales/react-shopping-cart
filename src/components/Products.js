@@ -8,7 +8,8 @@ import Product from './Product';
 const Products = () => {
 
 	const { products, addItem } = useContext(ProductContext);
-	console.log({ products }); 
+	console.log({ products });
+	console.log({ addItem }); 
 
 	return (
 		<div className="products-container">
@@ -16,7 +17,7 @@ const Products = () => {
 				<Product
 					key={product.id}
 					product={product}
-					addItem={props.addItem}
+					addItem={addItem}
 				/>
 			))}
 		</div>
